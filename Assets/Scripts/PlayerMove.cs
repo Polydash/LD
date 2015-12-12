@@ -5,10 +5,12 @@ using System.Collections.Generic;
 public class PlayerMove : MonoBehaviour
 {
 	private Rigidbody2D _Rigidbody;
+	private Animator _Animator;
 	private float _Input;
 	private List<GameObject> _MagnetList;
 	private bool _AttractionRequested = false;
 	private bool _RepulsionRequested = false;
+	private bool _IsOnGround = false;
 
 	public float _MovementForce;
 
@@ -27,6 +29,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Rigidbody = GetComponent<Rigidbody2D>();
 		_MagnetList = new List<GameObject>();
+		_Animator = transform.GetChild(0).GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -58,17 +61,43 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Rigidbody.AddForce(new Vector2(_Input * _MovementForce, 0.0f), ForceMode2D.Force);
 
+		//Attraction
 		if(_AttractionRequested)
 		{
 			Attract();
 			_AttractionRequested = false;
 		}
 
+		//Repulsion
 		if(_RepulsionRequested)
 		{
 			Repulse();
 			_RepulsionRequested = false;
 		}
+
+		//Animation state
+		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f)
+		{
+			_Animator.SetBool("toupie", true);
+			transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
+		}
+		else
+		{
+			_Animator.SetBool("toupie", false);
+			float speed = Mathf.Abs(_Rigidbody.velocity.x) / 4.5f * 100.0f;
+			_Animator.SetFloat("Speed", speed);
+
+			if(_Rigidbody.velocity.x < -0.5f)
+			{
+				transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 230.0f, 0.0f));
+			}
+			else if(_Rigidbody.velocity.x > 0.5f)
+			{
+				transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 130.0f, 0.0f));
+			}
+		}
+
+
 	}
 
 	private void Attract()
@@ -101,7 +130,7 @@ public class PlayerMove : MonoBehaviour
 			float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MagnetList[i].GetComponent<CircleCollider2D>().radius));
 			float forceMode = (_RepulsionImpulse) ? _RepulsionImpulseForce : Mathf.Max(_RepulsionForce, _RepulsionForceCap);
 			forceMode = _RepulsionMinForce + (forceMode - _RepulsionMinForce) * forceRatio;
-			repulsionForce -= distance * forceMode;	
+			repulsionForce -= distance * forceMode;
 		}
 		
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
@@ -122,4 +151,15 @@ public class PlayerMove : MonoBehaviour
 			_MagnetList.Remove(collider.gameObject);
 		}
 	}
+
+	/*private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.contacts.Length > 0)
+		{
+			if(collision.contacts[0].normal.y > 0 && _Rigidbody.velocity.y <= 0)
+			{
+				_IsOnGround = true;
+			}
+		}
+	}*/
 }

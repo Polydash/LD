@@ -872,9 +872,9 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: b23b699685b86c64a861297cb29c22de, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.2}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.4, y: 1.4}
 --- !u!95 &9517574
 Animator:
   serializedVersion: 3
