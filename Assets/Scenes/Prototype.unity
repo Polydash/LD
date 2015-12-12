@@ -191,9 +191,10 @@ MonoBehaviour:
   _JumpForce: 30
   _GravityAcceleration: 2
   _GravityMaxSpeed: 10
+  _AccelerationInAir: 0.5
   _DeaccelerationOnGround: 3
-  _AccelerationOnGround: 0.5
-  _MaxSpeedOnGround: 8
+  _AccelerationOnGround: 0.75
+  _MaxSpeedOnGround: 15
 --- !u!1 &1308247304
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 1308247304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
