@@ -31,13 +31,11 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Input = Input.GetAxis("Horizontal");
 
-		_AttractionRequested = false;
-		_RepulsionRequested = false;
-
 		if(Input.GetButton("Fire1") && !_AttractionImpulse)
 		{
 			_AttractionRequested = true;
 		}
+
 		if(Input.GetButton("Fire2") && !_RepulsionImpulse)
 		{
 			_RepulsionRequested = true;
@@ -47,6 +45,7 @@ public class PlayerMove : MonoBehaviour
 		{
 			_AttractionRequested = true;
 		}
+
 		if(Input.GetButtonDown("Fire2") && _RepulsionImpulse)
 		{
 			_RepulsionRequested = true;
@@ -60,11 +59,13 @@ public class PlayerMove : MonoBehaviour
 		if(_AttractionRequested)
 		{
 			Attract();
+			_AttractionRequested = false;
 		}
 
 		if(_RepulsionRequested)
 		{
 			Repulse();
+			_RepulsionRequested = false;
 		}
 	}
 
