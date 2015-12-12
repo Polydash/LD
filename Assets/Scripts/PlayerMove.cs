@@ -76,10 +76,11 @@ public class PlayerMove : MonoBehaviour
 		}
 
 		//Animation state
-		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f)
+		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f || !_IsOnGround)
 		{
 			_Animator.SetBool("toupie", true);
 			transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
+			_IsOnGround = false;
 		}
 		else
 		{
@@ -96,8 +97,6 @@ public class PlayerMove : MonoBehaviour
 				transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 130.0f, 0.0f));
 			}
 		}
-
-
 	}
 
 	private void Attract()
@@ -152,7 +151,7 @@ public class PlayerMove : MonoBehaviour
 		}
 	}
 
-	/*private void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(collision.contacts.Length > 0)
 		{
@@ -161,5 +160,5 @@ public class PlayerMove : MonoBehaviour
 				_IsOnGround = true;
 			}
 		}
-	}*/
+	}
 }
