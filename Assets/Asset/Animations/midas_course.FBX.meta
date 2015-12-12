@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: e7ecf355593bfdb418504abeed5006f2
+timeCreated: 1449945014
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bone_avantbrasD
+    100002: bone_avantbrasG
+    100004: bone_bassin
+    100006: bone_brasD
+    100008: bone_brasG
+    100010: bone_corps
+    100012: bone_cou
+    100014: bone_cuisseD
+    100016: bone_cuisseG
+    100018: bone_epauleD
+    100020: bone_epauleG
+    100022: bone_mainD
+    100024: bone_mainG
+    100026: bone_meche
+    100028: bone_meche2
+    100030: bone_meche3
+    100032: bone_piedD
+    100034: bone_piedG
+    100036: bone_tete
+    100038: bone_tibiaD
+    100040: bone_tibiaG
+    100042: bonend_mainD
+    100044: bonend_mainG
+    100046: bonend_meche
+    100048: bonend_piedD
+    100050: bonend_piedG
+    100052: bonend_tete
+    100054: Box001
+    100056: //RootNode
+    400000: bone_avantbrasD
+    400002: bone_avantbrasG
+    400004: bone_bassin
+    400006: bone_brasD
+    400008: bone_brasG
+    400010: bone_corps
+    400012: bone_cou
+    400014: bone_cuisseD
+    400016: bone_cuisseG
+    400018: bone_epauleD
+    400020: bone_epauleG
+    400022: bone_mainD
+    400024: bone_mainG
+    400026: bone_meche
+    400028: bone_meche2
+    400030: bone_meche3
+    400032: bone_piedD
+    400034: bone_piedG
+    400036: bone_tete
+    400038: bone_tibiaD
+    400040: bone_tibiaG
+    400042: bonend_mainD
+    400044: bonend_mainG
+    400046: bonend_meche
+    400048: bonend_piedD
+    400050: bonend_piedG
+    400052: bonend_tete
+    400054: Box001
+    400056: //RootNode
+    4300000: Box001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
