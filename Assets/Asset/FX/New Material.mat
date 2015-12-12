@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: texture_midas
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: New Material
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 867783a7687ef9c4d9d5c865336938c0, type: 3}
+          m_Texture: {fileID: 2800000, guid: af76233c002286341b4ccefe4e0c6d5f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -53,7 +53,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 0e99749ab097d6e43a1b87a3577c4ccc, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -77,13 +77,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _SpecGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -100,7 +93,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .00499999989
+        second: .0199999996
       data:
         first:
           name: _ZWrite
@@ -108,7 +101,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 1
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -128,7 +121,7 @@ Material:
       data:
         first:
           name: _EmissionScaleUI
-        second: 2
+        second: 0
       data:
         first:
           name: _Mode
@@ -136,21 +129,29 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .150000006
+        second: 0
+      data:
+        first:
+          name: _InvFade
+        second: 1
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: .427586555, b: 2, a: 2}
-      data:
-        first:
-          name: _Color
-        second: {r: .0815311149, g: .095006533, b: .0955882072, a: 1}
-      data:
-        first:
-          name: _SpecColor
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _EmissionColorUI
-        second: {r: 0, g: .213793278, b: 1, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .357266426, g: .582076907, b: .867647052, a: .501960814}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
