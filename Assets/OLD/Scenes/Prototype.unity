@@ -188,13 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1686c0511ac754c8153ecb0577f3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _JumpForce: 30
+  _GravityEnabled: 1
+  _MovementEnabled: 1
   _GravityAcceleration: 2
   _GravityMaxSpeed: 10
   _AccelerationInAir: 0.5
   _DeaccelerationOnGround: 3
   _AccelerationOnGround: 0.75
   _MaxSpeedOnGround: 15
+  _JumpForce: 30
+  _InAirJumpHorizontalForce: 0
 --- !u!1 &1308247304
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class PlayerControl : MonoBehaviour
 	public float _MoveInput {get; set;}
 
 	private const float MOVEDEADZONE = 0.2f;
-	private bool _JumpInput = false;
 
 	//Vertical movement
 	public float _GravityAcceleration;
