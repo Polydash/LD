@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: texture_midas
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: No Name
+  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _NORMALMAP _PARALLAXMAP
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -18,14 +18,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 867783a7687ef9c4d9d5c865336938c0, type: 3}
+          m_Texture: {fileID: 2800000, guid: 5c50f1713eeb0394ba1098e70088e32f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 7f1ebebcfe2f9c9439476ef2929fd0e3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -39,7 +39,7 @@ Material:
         first:
           name: _ParallaxMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 1f92a36a36b01f448b3b7ec59ec101e6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -53,7 +53,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 0e99749ab097d6e43a1b87a3577c4ccc, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -100,7 +100,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .00499999989
+        second: .0170000009
       data:
         first:
           name: _ZWrite
@@ -108,7 +108,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 1
+        second: .629999995
       data:
         first:
           name: _BumpScale
@@ -128,7 +128,7 @@ Material:
       data:
         first:
           name: _EmissionScaleUI
-        second: 2
+        second: 0
       data:
         first:
           name: _Mode
@@ -136,21 +136,21 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .150000006
+        second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: .427586555, b: 2, a: 2}
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 1, g: .995943189, b: .985294104, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .161764681, g: .110446252, b: 0, a: 1}
       data:
         first:
           name: _EmissionColorUI
-        second: {r: 0, g: .213793278, b: 1, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
