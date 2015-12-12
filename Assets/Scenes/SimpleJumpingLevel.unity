@@ -718,10 +718,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MovementForce: 10
   _AttractionImpulseForce: 20
+  _AttractionMinForce: 0
   _AttractionForce: 2
   _AttractionForceCap: 1.5
   _AttractionImpulse: 0
   _RepulsionImpulseForce: 20
+  _RepulsionMinForce: 5
   _RepulsionForce: 2
   _RepulsionForceCap: 1.5
   _RepulsionImpulse: 1

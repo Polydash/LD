@@ -13,10 +13,12 @@ public class PlayerMove : MonoBehaviour
 	public float _MovementForce;
 
 	public float _AttractionImpulseForce;
+	public float _AttractionMinForce;
 	public float _AttractionForce;
 	public float _AttractionForceCap;
 	public bool _AttractionImpulse = false;
 	public float _RepulsionImpulseForce;
+	public float _RepulsionMinForce;
 	public float _RepulsionForce;
 	public float _RepulsionForceCap;
 	public bool _RepulsionImpulse = false;
@@ -80,7 +82,8 @@ public class PlayerMove : MonoBehaviour
 
 			float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MagnetList[i].GetComponent<CircleCollider2D>().radius));
 			float forceMode = (_AttractionImpulse) ? _AttractionImpulseForce : Mathf.Max(_AttractionForce, _AttractionForceCap);
-			attractForce += forceRatio * distance * forceMode;
+			forceMode = _AttractionMinForce + (forceMode - _AttractionMinForce) * forceRatio;
+			attractForce += distance * forceMode;
 		}
 
 		_Rigidbody.AddForce(attractForce, ForceMode2D.Impulse);
@@ -97,80 +100,12 @@ public class PlayerMove : MonoBehaviour
 
 			float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MagnetList[i].GetComponent<CircleCollider2D>().radius));
 			float forceMode = (_RepulsionImpulse) ? _RepulsionImpulseForce : Mathf.Max(_RepulsionForce, _RepulsionForceCap);
-			repulsionForce -= forceRatio * distance * forceMode;	
+			forceMode = _RepulsionMinForce + (forceMode - _RepulsionMinForce) * forceRatio;
+			repulsionForce -= distance * forceMode;	
 		}
 		
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
 	}
-
-	/*private void FixedUpdate()
-	{
-		_Rigidbody.AddForce(new Vector2(_Input * _MovementForce, 0.0f), ForceMode2D.Force);
-
-		if(_AttractionRequested)
-		{
-			if(MagnetList.Count > 0)
-			{
-				GameObject bestMagnet = MagnetList[0];
-				Vector3 bestVector = MagnetList[0].transform.position - transform.position;
-				float bestMagnitude = bestVector.magnitude;
-				
-				for(int i=1; i<MagnetList.Count; ++i)
-				{
-					Vector3 vector = MagnetList[i].transform.position - transform.position;
-					float magnitude = vector.magnitude;
-
-					if(magnitude < bestMagnitude)
-					{
-						bestMagnet = MagnetList[i];
-						bestVector = vector;
-						bestMagnitude = magnitude;
-					}
-				}
-
-				bestVector.Normalize();
-				float radius = bestMagnet.GetComponent<CircleCollider2D>().radius;
-				float force = Mathf.Abs(radius - bestMagnitude);
-				force = Mathf.Min(force, _ForceCap);
-
-				_Rigidbody.AddForce(bestVector * force * _AttractionForce, ForceMode2D.Impulse);
-			}
-
-			_AttractionRequested = false;
-		}
-
-		if(_RepulsionRequested)
-		{
-			if(MagnetList.Count > 0)
-			{
-				GameObject bestMagnet = MagnetList[0];
-				Vector3 bestVector = MagnetList[0].transform.position - transform.position;
-				float bestMagnitude = bestVector.magnitude;
-				
-				for(int i=1; i<MagnetList.Count; ++i)
-				{
-					Vector3 vector = MagnetList[i].transform.position - transform.position;
-					float magnitude = vector.magnitude;
-
-					if(magnitude < bestMagnitude)
-					{
-						bestMagnet = MagnetList[i];
-						bestVector = vector;
-						bestMagnitude = magnitude;
-					}
-				}
-
-				bestVector.Normalize();
-				float radius = bestMagnet.GetComponent<CircleCollider2D>().radius;
-				float force = Mathf.Abs(radius - bestMagnitude);
-				force = Mathf.Min(force, _ForceCap);
-
-				_Rigidbody.AddForce(-bestVector * force * _RepulsionForce, ForceMode2D.Impulse);
-			}
-
-			_RepulsionRequested = false;
-		}
-	}*/
 
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
