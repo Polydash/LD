@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -65,6 +66,7 @@ public class PlayerMove : MonoBehaviour
 		yield return new WaitForSeconds(_WarpAnimationTime);
 		if(_LevelEnded)
 		{
+            yield return StartCoroutine(fadeToBlack());
 			if(Application.loadedLevel != Application.levelCount - 1)
 			{
 				Application.LoadLevel(Application.loadedLevel + 1);
@@ -76,7 +78,24 @@ public class PlayerMove : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+    private IEnumerator fadeToBlack()
+    {
+        float fadeLenght = 1.0f, threshold = 0.1f;
+        Image img = Camera.main.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>();
+
+        while(img.color.a < 1)
+        {
+            img.color += new Color(0, 0, 0, Time.deltaTime / fadeLenght);
+            if (img.color.a + threshold > 1)
+            {
+                img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+            }
+            yield return null;
+        }
+        yield break;
+    }
+
+    private void Awake()
 	{
 		_Rigidbody = GetComponent<Rigidbody2D>();
 		_MagnetList = new List<GameObject>();
