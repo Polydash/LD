@@ -51,12 +51,29 @@ public class PlayerMove : MonoBehaviour
 	public float _SuckedSpeed;
 	public float _DeathAnimationTime;
 	public float _MaxDeathShake;
+	public float _WarpAnimationTime;
 
 	private IEnumerator FreezeFrame(float time)
 	{
 		Time.timeScale = 0.01f;
 		yield return new WaitForSeconds(time);
 		Time.timeScale = 1;
+	}
+
+	private IEnumerator WarpAnimation()
+	{
+		yield return new WaitForSeconds(_WarpAnimationTime);
+		if(_LevelEnded)
+		{
+			if(Application.loadedLevel != Application.levelCount - 1)
+			{
+				Application.LoadLevel(Application.loadedLevel + 1);
+			}
+			else
+			{
+				Application.LoadLevel(0);
+			}
+		}
 	}
 
 	private void Awake()
@@ -292,6 +309,7 @@ public class PlayerMove : MonoBehaviour
 		else if(collider.tag == "MasterMagnet")
 		{
 			ClearMagnets();
+			StartCoroutine(WarpAnimation());
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
