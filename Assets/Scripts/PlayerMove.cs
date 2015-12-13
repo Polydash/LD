@@ -25,6 +25,9 @@ public class PlayerMove : MonoBehaviour
 	public float _RepulsionForceCap;
 	public bool _RepulsionImpulse = false;
 
+	public float _ToupieAnimationThreshold;
+	public float _ToupieAnimationMaxSpeed;
+
 	private void Awake()
 	{
 		_Rigidbody = GetComponent<Rigidbody2D>();
@@ -76,10 +79,17 @@ public class PlayerMove : MonoBehaviour
 		}
 
 		//Animation state
+		_Animator.speed = 1.0f;
 		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f || !_IsOnGround)
 		{
 			_Animator.SetBool("toupie", true);
 			transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
+			float magnitude = _Rigidbody.velocity.magnitude;
+			if(magnitude > _ToupieAnimationThreshold)
+			{
+				float animationSpeed = Mathf.Min(magnitude / _ToupieAnimationThreshold, _ToupieAnimationMaxSpeed);
+				_Animator.speed = animationSpeed;
+			}
 			_IsOnGround = false;
 		}
 		else
@@ -152,6 +162,17 @@ public class PlayerMove : MonoBehaviour
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.contacts.Length > 0)
+		{
+			if(collision.contacts[0].normal.y > 0 && _Rigidbody.velocity.y <= 0)
+			{
+				_IsOnGround = true;
+			}
+		}
+	}
+
+	private void OnCollisionStay2D(Collision2D collision)
 	{
 		if(collision.contacts.Length > 0)
 		{

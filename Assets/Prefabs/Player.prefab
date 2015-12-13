@@ -914,6 +914,8 @@ MonoBehaviour:
   _RepulsionForce: 2
   _RepulsionForceCap: 1.5
   _RepulsionImpulse: 1
+  _ToupieAnimationThreshold: 4
+  _ToupieAnimationMaxSpeed: 3
 --- !u!137 &13712824
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
