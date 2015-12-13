@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
 	private bool _RepulsionRequested = false;
 	private bool _IsOnGround = false;
 	private float _SuckedRotation;
+	private bool _IsDead = false;
 
 	[Header("Ground Movement")]
 	public float _MovementForce;
@@ -84,6 +85,12 @@ public class PlayerMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if(_IsDead)
+		{
+			_Animator.SetTrigger("Dead");
+			return;
+		}
+
 		_Rigidbody.AddForce(new Vector2(_Input * _MovementForce, 0.0f), ForceMode2D.Force);
 
 		//Master magnet
@@ -223,6 +230,11 @@ public class PlayerMove : MonoBehaviour
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
+		}
+		else if(collider.tag == "Spike")
+		{
+			_Rigidbody.isKinematic = true;
+			_IsDead = true;
 		}
 	}
 

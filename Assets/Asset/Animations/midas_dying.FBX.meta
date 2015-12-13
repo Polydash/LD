@@ -3,7 +3,7 @@ guid: 5fd9edefd2b9cee46831c7bd64ad7c7d
 timeCreated: 1449965741
 licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: bone_avantbrasD
     100002: bone_avantbrasG
@@ -64,7 +64,7 @@ ModelImporter:
     400054: Box001
     400056: //RootNode
     4300000: Box001
-    7400000: Take 001
+    7400000: Dying
     9500000: //RootNode
     13700000: Box001
   materials:
@@ -74,15 +74,106 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dying
+      takeName: Take 001
+      firstFrame: 89
+      lastFrame: 123
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone_bassin
+        weight: 1
+      - path: bone_bassin/bone_corps
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete/bone_meche
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete/bone_meche/bone_meche2
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete/bone_meche/bone_meche2/bone_meche3
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete/bone_meche/bone_meche2/bone_meche3/bonend_meche
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_cou/bone_tete/bonend_tete
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleD
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleD/bone_brasD
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleD/bone_brasD/bone_avantbrasD
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleD/bone_brasD/bone_avantbrasD/bone_mainD
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleD/bone_brasD/bone_avantbrasD/bone_mainD/bonend_mainD
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleG
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleG/bone_brasG
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleG/bone_brasG/bone_avantbrasG
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleG/bone_brasG/bone_avantbrasG/bone_mainG
+        weight: 1
+      - path: bone_bassin/bone_corps/bone_epauleG/bone_brasG/bone_avantbrasG/bone_mainG/bonend_mainG
+        weight: 1
+      - path: bone_bassin/bone_cuisseD
+        weight: 1
+      - path: bone_bassin/bone_cuisseD/bone_tibiaD
+        weight: 1
+      - path: bone_bassin/bone_cuisseD/bone_tibiaD/bone_piedD
+        weight: 1
+      - path: bone_bassin/bone_cuisseD/bone_tibiaD/bone_piedD/bonend_piedD
+        weight: 1
+      - path: bone_bassin/bone_cuisseG
+        weight: 1
+      - path: bone_bassin/bone_cuisseG/bone_tibiaG
+        weight: 1
+      - path: bone_bassin/bone_cuisseG/bone_tibiaG/bone_piedG
+        weight: 1
+      - path: bone_bassin/bone_cuisseG/bone_tibiaG/bone_piedG/bonend_piedG
+        weight: 1
+      - path: Box001
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -103,24 +194,25 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
