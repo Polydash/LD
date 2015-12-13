@@ -14,6 +14,9 @@ public class PlayerMove : MonoBehaviour
 	private bool _IsOnGround = false;
 	private float _SuckedRotation;
 	private bool _IsDead = false;
+	private float _DeathAnimationElapsed = 0.0f;
+	private Vector3 _MeshOffset;
+	private Vector3 _StartPosition;
 
 	[Header("Ground Movement")]
 	public float _MovementForce;
@@ -43,6 +46,8 @@ public class PlayerMove : MonoBehaviour
 	public float _ToupieAnimationThreshold;
 	public float _ToupieAnimationMaxSpeed;
 	public float _SuckedSpeed;
+	public float _DeathAnimationTime;
+	public float _MaxDeathShake;
 
 	private IEnumerator FreezeFrame(float time)
 	{
@@ -56,6 +61,8 @@ public class PlayerMove : MonoBehaviour
 		_Rigidbody = GetComponent<Rigidbody2D>();
 		_MagnetList = new List<GameObject>();
 		_Animator = transform.GetChild(0).GetComponent<Animator>();
+		_MeshOffset = transform.GetChild(0).localPosition;
+		_StartPosition = transform.position;
 	}
 
 	private void Update()
@@ -87,7 +94,19 @@ public class PlayerMove : MonoBehaviour
 	{
 		if(_IsDead)
 		{
-			_Animator.SetTrigger("Dead");
+			_DeathAnimationElapsed += Time.fixedDeltaTime;
+			float shake = (_DeathAnimationElapsed / _DeathAnimationTime) * _MaxDeathShake;
+			transform.GetChild(0).localPosition = _MeshOffset;
+			if(_DeathAnimationElapsed > _DeathAnimationTime)
+			{
+				Respawn();
+			}
+			else
+			{
+				float shakeX = Random.Range(-shake, shake);
+				float shakeY = Random.Range(-shake, shake);
+				transform.GetChild(0).localPosition += new Vector3(shakeX, shakeY);
+			}
 			return;
 		}
 
@@ -218,6 +237,17 @@ public class PlayerMove : MonoBehaviour
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
 	}
 
+	private void Respawn()
+	{
+		Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.0f;
+		transform.position = _StartPosition;
+		_Animator.Play("WalkBlend");
+		_Rigidbody.isKinematic = false;
+		_MagnetList.Clear();
+		_MasterMagnet = null;
+		_IsDead = false;
+	}
+
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
 		if(collider.tag == "Magnet" && _MasterMagnet == null)
@@ -231,10 +261,14 @@ public class PlayerMove : MonoBehaviour
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
 		}
-		else if(collider.tag == "Spike")
+		else if(collider.tag == "Hazard" && !_IsDead)
 		{
+			_DeathAnimationElapsed = 0.0f;
 			_Rigidbody.isKinematic = true;
 			_IsDead = true;
+			_Animator.SetTrigger("Dead");
+			StartCoroutine(FreezeFrame(0.005f));
+			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.01f;
 		}
 	}
 
