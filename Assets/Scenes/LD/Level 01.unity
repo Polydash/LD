@@ -98,7 +98,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.44
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -123,6 +123,10 @@ Prefab:
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
+      propertyPath: _Radius
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de73771c51e15b748935313e4605ea58, type: 2}
@@ -618,7 +622,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.52
+      value: 3.84
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2298,7 +2302,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.4
+      value: 10.94
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2336,7 +2340,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.83
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2369,6 +2373,10 @@ Prefab:
     - target: {fileID: 130522, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_Name
       value: Magnet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
+      propertyPath: _Radius
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de73771c51e15b748935313e4605ea58, type: 2}
