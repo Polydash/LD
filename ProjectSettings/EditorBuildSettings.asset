@@ -17,3 +17,21 @@ EditorBuildSettings:
     path: Assets/Scenes/LD/Easy 2.unity
   - enabled: 1
     path: Assets/Scenes/LD/Easy 3.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Easy 4.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Medium 1.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Medium 2.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Medium 3.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Medium 4.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Hard 1.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Hard 2.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Hard 3.unity
+  - enabled: 1
+    path: Assets/Scenes/LD/Hard 4.unity
