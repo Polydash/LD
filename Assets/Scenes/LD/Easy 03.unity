@@ -288,7 +288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -500,7 +500,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -810,7 +810,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -868,7 +868,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -926,7 +926,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -984,7 +984,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -1088,7 +1088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -1146,7 +1146,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -1281,7 +1281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -1339,7 +1339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 19878876, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: ShapeModule.radius
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11424908, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: _Radius
@@ -1620,6 +1620,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5807438, guid: 45980f7296f061942a929ffc6abd59a2, type: 2}
       propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19897894, guid: 45980f7296f061942a929ffc6abd59a2, type: 2}
+      propertyPath: ShapeModule.radius
       value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
