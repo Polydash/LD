@@ -74,6 +74,14 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Input = Input.GetAxis("Horizontal");
 
+		if(!Input.GetButton("Fire1"))
+		{
+			for(int i=0; i < _MagnetList.Count; ++i)
+			{
+				_MagnetList[i].GetComponent<Magnet>().desactivate();
+			}
+		}
+
 		if(Input.GetButtonDown("Submit"))
 		{
 			Respawn();
@@ -218,6 +226,8 @@ public class PlayerMove : MonoBehaviour
 			float forceMode = (_AttractionImpulse) ? _AttractionImpulseForce : Mathf.Max(_AttractionForce, _AttractionForceCap);
 			forceMode = _AttractionMinForce + (forceMode - _AttractionMinForce) * forceRatio;
 			attractForce += distance * forceMode;
+
+			_MagnetList[i].GetComponent<Magnet>().activate();
 		}
 
 		_Rigidbody.AddForce(attractForce, ForceMode2D.Impulse);
@@ -255,7 +265,7 @@ public class PlayerMove : MonoBehaviour
 		_Animator.Play("WalkBlend");
 		_Rigidbody.velocity = Vector3.zero;
 		_Rigidbody.isKinematic = false;
-		_MagnetList.Clear();
+		ClearMagnets();
 		_MasterMagnet = null;
 		_IsDead = false;
 		MovableMagnet.RespawnAllInstances();
@@ -270,7 +280,7 @@ public class PlayerMove : MonoBehaviour
 		}
 		else if(collider.tag == "MasterMagnet")
 		{
-			_MagnetList.Clear();
+			ClearMagnets();
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
@@ -291,6 +301,7 @@ public class PlayerMove : MonoBehaviour
 		if(collider.tag == "Magnet")
 		{
 			_MagnetList.Remove(collider.gameObject);
+			collider.GetComponent<Magnet>().desactivate();
 		}
 		else if(collider.tag == "MasterMagnet")
 		{
@@ -321,5 +332,14 @@ public class PlayerMove : MonoBehaviour
 				_IsOnGround = true;
 			}
 		}
+	}
+
+	private void ClearMagnets()
+	{
+		for(int i=0; i<_MagnetList.Count; ++i)
+		{
+			_MagnetList[i].GetComponent<Magnet>().desactivate();
+		}
+		_MagnetList.Clear();
 	}
 }
