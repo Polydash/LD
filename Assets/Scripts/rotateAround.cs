@@ -14,7 +14,7 @@ public class rotateAround : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Cos : " + Mathf.Cos(Time.time) + "  Sin : " + Mathf.Sin(Time.time));
+       // Debug.Log("Cos : " + Mathf.Cos(Time.time) + "  Sin : " + Mathf.Sin(Time.time));
         this.transform.position = _initialPosition + new Vector3( Mathf.Cos(Time.time * _speed) * _maxX, Mathf.Sin(Time.time * _speed) * _maxY , 0) ;
 	}
 }

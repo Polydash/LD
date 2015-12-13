@@ -7,9 +7,9 @@ public class CameraMenuScript : MonoBehaviour {
     public Vector3 _target;
     public float _lerpSpeed = 1.0f, _threshold = 0.01f;
     public List<Vector3> _positionList;
-
-	// Use this for initialization
-	void Start () {
+    public List<GameObject> _defaultButtonList;
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -24,5 +24,6 @@ public class CameraMenuScript : MonoBehaviour {
     public void goTo(int index)
     {
         _target = _positionList[index];
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_defaultButtonList[index]);
     }
 }
