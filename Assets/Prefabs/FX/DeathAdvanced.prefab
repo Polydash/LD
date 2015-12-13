@@ -12,7 +12,7 @@ GameObject:
   - 199: {fileID: 19982674}
   - 114: {fileID: 11481374}
   m_Layer: 0
-  m_Name: CircleExplosionNew
+  m_Name: DeathAdvanced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
