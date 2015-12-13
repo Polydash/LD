@@ -371,6 +371,10 @@ Prefab:
       propertyPath: m_Name
       value: Movable Magnet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 19875078, guid: 36a712c2c72782d41a78eb0b5ffcdd41, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36a712c2c72782d41a78eb0b5ffcdd41, type: 2}
   m_IsPrefabParent: 0
@@ -781,6 +785,10 @@ Prefab:
     - target: {fileID: 115620, guid: 36a712c2c72782d41a78eb0b5ffcdd41, type: 2}
       propertyPath: m_Name
       value: Movable Magnet (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875078, guid: 36a712c2c72782d41a78eb0b5ffcdd41, type: 2}
+      propertyPath: ShapeModule.radius
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36a712c2c72782d41a78eb0b5ffcdd41, type: 2}
@@ -2741,7 +2749,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405344, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
