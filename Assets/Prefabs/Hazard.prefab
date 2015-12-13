@@ -24,7 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440660}
-  - 61: {fileID: 6136788}
+  - 58: {fileID: 5830864}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Hazard
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.5, z: 0}
+  m_LocalPosition: {x: -1.6050645, y: -1.1997621, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499052}
@@ -121,8 +121,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133852}
   m_Mesh: {fileID: 4300000, guid: 7d9f81e0d1d6f3b49822d2417c9c0c81, type: 3}
---- !u!61 &6136788
-BoxCollider2D:
+--- !u!58 &5830864
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Radius: 0.55
 --- !u!108 &10899442
 Light:
   m_ObjectHideFlags: 1
