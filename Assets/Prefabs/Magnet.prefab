@@ -4688,7 +4688,7 @@ ParticleSystemRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170696}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: 88abea4be39e9c44ea6418b384a79b1b, type: 2}
@@ -4729,7 +4729,7 @@ ParticleSystemRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185660}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: 88abea4be39e9c44ea6418b384a79b1b, type: 2}
@@ -4770,8 +4770,8 @@ ParticleSystemRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186694}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: 88abea4be39e9c44ea6418b384a79b1b, type: 2}
   m_SubsetIndices: 
@@ -4814,6 +4814,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ShapeModule.radius
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
