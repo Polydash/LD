@@ -69,7 +69,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Input = Input.GetAxis("Horizontal");
 
-		if(Input.GetButtonDown("Restart"))
+		if(Input.GetButtonDown("Submit"))
 		{
 			Respawn();
 		}
