@@ -105,6 +105,10 @@ public class PlayerMove : MonoBehaviour
 
 		//Animation state
 		_Animator.speed = 1.0f;
+		if(_MasterMagnet != null)
+		{
+			_Animator.SetBool("Sucked", true);
+		}
 		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f || !_IsOnGround)
 		{
 			_Animator.SetBool("toupie", true);
