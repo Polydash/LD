@@ -19,7 +19,7 @@ public class TimerUI : MonoBehaviour
 		string display = "R / Start : Restart level\nTime : " + elapsed.ToString("0.00") + "\n";
 		if(LevelsManager.instance != null)
 		{
-			float bestTime = LevelsManager.instance.GetTimer(Application.loadedLevel);
+			float bestTime = LevelsManager.instance.GetTimer(Application.loadedLevel - 1);
 			if(bestTime > 0.0f)
 			{
 				display += "Best time : " + bestTime.ToString("0.00");

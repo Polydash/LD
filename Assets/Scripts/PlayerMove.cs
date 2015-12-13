@@ -337,7 +337,7 @@ public class PlayerMove : MonoBehaviour
 			float elapsed = _LevelEndTime - _LevelStartTime;
 			if(LevelsManager.instance != null)
 			{
-				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel);
+				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel - 1);
 			}
 		}
 		else if(collider.tag == "Hazard" && !_IsDead)
