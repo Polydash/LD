@@ -287,12 +287,13 @@ public class PlayerMove : MonoBehaviour
 		}
 		else if(collider.tag == "Hazard" && !_IsDead)
 		{
+			transform.GetChild(3).GetComponent<ParticleSystem>().Play();
 			_DeathAnimationElapsed = 0.0f;
 			_Rigidbody.isKinematic = true;
 			_IsDead = true;
 			_Animator.SetTrigger("Dead");
-			StartCoroutine(FreezeFrame(0.005f));
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.01f;
+			StartCoroutine(FreezeFrame(0.005f));
 		}
 	}
 

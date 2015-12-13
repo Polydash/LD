@@ -168,11 +168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433882, guid: 3aa653ac61d4b0c4d9ffd3defa6112f5, type: 2}
       propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 185500, guid: 3aa653ac61d4b0c4d9ffd3defa6112f5, type: 2}
-      propertyPath: m_TagString
-      value: Player
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3aa653ac61d4b0c4d9ffd3defa6112f5, type: 2}
@@ -559,7 +555,7 @@ Transform:
   m_LocalScale: {x: 15, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!4 &900874827 stripped
 Transform:
   m_PrefabParentObject: {fileID: 433882, guid: 3aa653ac61d4b0c4d9ffd3defa6112f5, type: 2}
@@ -921,7 +917,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405344, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 10880174, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
+      propertyPath: m_Color.g
+      value: 0.6154159
+      objectReference: {fileID: 0}
+    - target: {fileID: 10880174, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10880174, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
+      propertyPath: m_Color.r
+      value: 0.41911763
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
