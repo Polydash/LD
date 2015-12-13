@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -51,6 +52,7 @@ public class PlayerMove : MonoBehaviour
 	public float _SuckedSpeed;
 	public float _DeathAnimationTime;
 	public float _MaxDeathShake;
+	public float _WarpAnimationTime;
 
 	private IEnumerator FreezeFrame(float time)
 	{
@@ -59,7 +61,41 @@ public class PlayerMove : MonoBehaviour
 		Time.timeScale = 1;
 	}
 
-	private void Awake()
+	private IEnumerator WarpAnimation()
+	{
+		yield return new WaitForSeconds(_WarpAnimationTime);
+		if(_LevelEnded)
+		{
+            yield return StartCoroutine(fadeToBlack());
+			if(Application.loadedLevel != Application.levelCount - 1)
+			{
+				Application.LoadLevel(Application.loadedLevel + 1);
+			}
+			else
+			{
+				Application.LoadLevel(0);
+			}
+		}
+	}
+
+    private IEnumerator fadeToBlack()
+    {
+        float fadeLenght = 1.0f, threshold = 0.1f;
+        Image img = Camera.main.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>();
+
+        while(img.color.a < 1)
+        {
+            img.color += new Color(0, 0, 0, Time.deltaTime / fadeLenght);
+            if (img.color.a + threshold > 1)
+            {
+                img.color = new Color(img.color.r, img.color.g, img.color.b, 1);
+            }
+            yield return null;
+        }
+        yield break;
+    }
+
+    private void Awake()
 	{
 		_Rigidbody = GetComponent<Rigidbody2D>();
 		_MagnetList = new List<GameObject>();
@@ -292,6 +328,7 @@ public class PlayerMove : MonoBehaviour
 		else if(collider.tag == "MasterMagnet")
 		{
 			ClearMagnets();
+			StartCoroutine(WarpAnimation());
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
@@ -300,7 +337,7 @@ public class PlayerMove : MonoBehaviour
 			float elapsed = _LevelEndTime - _LevelStartTime;
 			if(LevelsManager.instance != null)
 			{
-				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel);
+				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel - 1);
 			}
 		}
 		else if(collider.tag == "Hazard" && !_IsDead)

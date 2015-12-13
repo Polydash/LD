@@ -21,10 +21,7 @@ public class LevelsManager : MonoBehaviour
 		}
 
 		_Timers = new float[Application.levelCount - 1];
-		for(int i = 0; i < Application.levelCount - 1; ++i)
-		{
-			_Timers[i] = -1.0f;
-		}
+		LoadFile();
 	}
 
 	public float GetTimer(int level)
@@ -32,14 +29,41 @@ public class LevelsManager : MonoBehaviour
 		return _Timers[level];
 	}
 
-	public bool SubmitTimer(float timer, int level)
+	public void SubmitTimer(float timer, int level)
 	{
 		if(_Timers[level] < 0.0f || _Timers[level] > timer)
 		{
 			_Timers[level] = timer;
-			return true;
+			SaveFile();
 		}
+	}
 
-		return false;
+	private void LoadFile()
+	{
+		if(File.Exists("Polaris.sav"))
+		{
+			string[] lines = File.ReadAllLines("Polaris.sav");
+			for(int i=0; i < Application.levelCount - 1; ++i)
+			{
+				_Timers[i] = float.Parse(lines[i]);
+			}
+		}
+		else
+		{
+			for(int i = 0; i < Application.levelCount - 1; ++i)
+			{
+				_Timers[i] = -1.0f;
+			}
+		}
+	}
+
+	private void SaveFile()
+	{
+		string[] lines = new string[Application.levelCount - 1];
+		for(int i=0; i < Application.levelCount - 1; ++i)
+		{
+			lines[i] = _Timers[i].ToString("0.00");
+		}
+		File.WriteAllLines("Polaris.sav", lines);
 	}
 }

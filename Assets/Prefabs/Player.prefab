@@ -602,7 +602,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32, y: 0.03, z: 0}
+  m_LocalPosition: {x: -7.39, y: 10.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441588}
@@ -1050,6 +1050,7 @@ MonoBehaviour:
   _SuckedSpeed: -15
   _DeathAnimationTime: 1.5
   _MaxDeathShake: 0.35
+  _WarpAnimationTime: 2
 --- !u!114 &11487900
 MonoBehaviour:
   m_ObjectHideFlags: 1
