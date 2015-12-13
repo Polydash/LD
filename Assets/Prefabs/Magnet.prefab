@@ -451,7 +451,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 11
-    radius: 10
+    radius: 15
     angle: 25
     length: 5
     boxX: 1
@@ -1667,7 +1667,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: ShapeModule.radius
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130522}
