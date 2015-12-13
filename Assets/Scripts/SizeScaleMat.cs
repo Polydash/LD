@@ -11,6 +11,7 @@ public class SizeScaleMat : MonoBehaviour
 			float tileX = child.localScale.x;
 			float tileY = child.localScale.y;
 			child.GetComponent<Renderer>().material.SetTextureScale("_MainTex", new Vector2(tileX, tileY));
+			child.GetComponent<Renderer>().material.SetTextureScale("_BumpMap", new Vector2(tileX, tileY));
 		}
 	}
 }

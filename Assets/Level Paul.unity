@@ -466,7 +466,7 @@ Transform:
   m_LocalScale: {x: 20.504257, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &612606636
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +930,10 @@ Prefab:
     - target: {fileID: 10880174, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
       propertyPath: m_Color.r
       value: 0.41911763
+      objectReference: {fileID: 0}
+    - target: {fileID: 10880174, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
+      propertyPath: m_Intensity
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e46ed95b849274b40bac06582f2c3e71, type: 2}
