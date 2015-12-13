@@ -8,12 +8,15 @@ public class PlayerMove : MonoBehaviour
 	private Animator _Animator;
 	private float _Input;
 	private List<GameObject> _MagnetList;
+	private GameObject _MasterMagnet = null;
 	private bool _AttractionRequested = false;
 	private bool _RepulsionRequested = false;
 	private bool _IsOnGround = false;
 
 	public float _MovementForce;
 
+	public float _MasterAttractionMinForce;
+	public float _MasterAttractionForce;
 	public float _AttractionImpulseForce;
 	public float _AttractionMinForce;
 	public float _AttractionForce;
@@ -71,6 +74,12 @@ public class PlayerMove : MonoBehaviour
 	{
 		_Rigidbody.AddForce(new Vector2(_Input * _MovementForce, 0.0f), ForceMode2D.Force);
 
+		//Master magnet
+		if(_MasterMagnet != null)
+		{
+			AttractMasterMagnet();
+		}
+
 		//Attraction
 		if(_AttractionRequested)
 		{
@@ -114,6 +123,21 @@ public class PlayerMove : MonoBehaviour
 				transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 130.0f, 0.0f));
 			}
 		}
+	}
+
+	private void AttractMasterMagnet()
+	{
+		Vector3 attractForce = Vector3.zero;
+		Vector3 distance = _MasterMagnet.transform.position - transform.position;
+		float magnitude = distance.magnitude;
+		distance.Normalize();
+
+		float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MasterMagnet.GetComponent<CircleCollider2D>().radius));
+		float forceMode = _MasterAttractionForce;
+		forceMode = _MasterAttractionMinForce + (forceMode - _MasterAttractionMinForce) * forceRatio;
+		attractForce += distance * forceMode;
+
+		_Rigidbody.AddForce(attractForce, ForceMode2D.Impulse);
 	}
 
 	private void Attract()
@@ -160,9 +184,15 @@ public class PlayerMove : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.tag == "Magnet")
+		if(collider.tag == "Magnet" && _MasterMagnet == null)
 		{
 			_MagnetList.Add(collider.gameObject);
+		}
+		else if(collider.tag == "MasterMagnet")
+		{
+			_MagnetList.Clear();
+			_MasterMagnet = collider.gameObject;
+			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 		}
 	}
 
@@ -171,6 +201,11 @@ public class PlayerMove : MonoBehaviour
 		if(collider.tag == "Magnet")
 		{
 			_MagnetList.Remove(collider.gameObject);
+		}
+		else if(collider.tag == "MasterMagnet")
+		{
+			_MasterMagnet = null;
+			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.0f;
 		}
 	}
 

@@ -12,9 +12,14 @@ public class LerpCamera : MonoBehaviour
 	public float _MinY;
 	public float _MaxY;
 
+	public float _ShakeValue = 0.0f;
+
 	private void Update()
 	{
 		transform.position += (_Player.position - transform.position) * _Lerp;
+		float shakeX = Random.Range(-_ShakeValue, _ShakeValue);
+		float shakeY = Random.Range(-_ShakeValue, _ShakeValue);
+		transform.position += new Vector3(shakeX, shakeY);
  		transform.position = new Vector3(transform.position.x, transform.position.y, -10.0f);
 
 		if(_Constrained)
