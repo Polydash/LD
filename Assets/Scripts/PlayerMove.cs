@@ -65,6 +65,11 @@ public class PlayerMove : MonoBehaviour
 		_StartPosition = transform.position;
 	}
 
+	private void Start()
+	{
+		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
+	}
+
 	private void Update()
 	{
 		_Input = Input.GetAxis("Horizontal");
@@ -254,6 +259,7 @@ public class PlayerMove : MonoBehaviour
 		_MasterMagnet = null;
 		_IsDead = false;
 		MovableMagnet.RespawnAllInstances();
+		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
@@ -275,7 +281,6 @@ public class PlayerMove : MonoBehaviour
 			_Rigidbody.isKinematic = true;
 			_IsDead = true;
 			_Animator.SetTrigger("Dead");
-			transform.GetChild(2).GetComponent<ParticleSystem>().Play();
 			StartCoroutine(FreezeFrame(0.005f));
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.01f;
 		}

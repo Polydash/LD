@@ -314,7 +314,7 @@ GameObject:
   - 198: {fileID: 19872506}
   - 199: {fileID: 19941944}
   m_Layer: 0
-  m_Name: DeathFX
+  m_Name: SpawnFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0.113171816, y: -3.7362947, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441588}
@@ -3006,11 +3006,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 150
+    cnt0: 250
     cnt1: 100
     cnt2: 30
     cnt3: 30
-    cntmax0: 150
+    cntmax0: 250
     cntmax1: 100
     cntmax2: 30
     cntmax3: 30
