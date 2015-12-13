@@ -165,7 +165,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		if(collision.contacts.Length > 0)
 		{
-			if(collision.contacts[0].normal.y > 0 && _Rigidbody.velocity.y <= 0)
+			if(collision.contacts[0].normal.y > 0.0f && _Rigidbody.velocity.y <= 0.0f)
 			{
 				_IsOnGround = true;
 			}
@@ -176,7 +176,7 @@ public class PlayerMove : MonoBehaviour
 	{
 		if(collision.contacts.Length > 0)
 		{
-			if(collision.contacts[0].normal.y > 0 && _Rigidbody.velocity.y <= 0)
+			if(collision.contacts[0].normal.y > 0.0f && _Rigidbody.velocity.y <= 0.0f)
 			{
 				_IsOnGround = true;
 			}
