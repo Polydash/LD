@@ -252,6 +252,7 @@ public class PlayerMove : MonoBehaviour
 		_MagnetList.Clear();
 		_MasterMagnet = null;
 		_IsDead = false;
+		MovableMagnet.RespawnAllInstances();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
