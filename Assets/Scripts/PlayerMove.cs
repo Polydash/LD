@@ -13,21 +13,28 @@ public class PlayerMove : MonoBehaviour
 	private bool _RepulsionRequested = false;
 	private bool _IsOnGround = false;
 
+	[Header("Ground Movement")]
 	public float _MovementForce;
 
+	[Header("Master Magnet")]
 	public float _MasterAttractionMinForce;
 	public float _MasterAttractionForce;
+
+	[Header("Common Magnet Attraction")]
 	public float _AttractionImpulseForce;
 	public float _AttractionMinForce;
 	public float _AttractionForce;
 	public float _AttractionForceCap;
 	public bool _AttractionImpulse = false;
+	
+	[Header("Common Magnet Repulsion")]
 	public float _RepulsionImpulseForce;
 	public float _RepulsionMinForce;
 	public float _RepulsionForce;
 	public float _RepulsionForceCap;
 	public bool _RepulsionImpulse = false;
 
+	[Header("Animation")]
 	public float _ToupieAnimationThreshold;
 	public float _ToupieAnimationMaxSpeed;
 
