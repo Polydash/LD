@@ -247,6 +247,7 @@ public class PlayerMove : MonoBehaviour
 		Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.0f;
 		transform.position = _StartPosition;
 		_Animator.Play("WalkBlend");
+		_Rigidbody.velocity = Vector3.zero;
 		_Rigidbody.isKinematic = false;
 		_MagnetList.Clear();
 		_MasterMagnet = null;
