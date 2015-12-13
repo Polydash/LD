@@ -12,11 +12,13 @@ public class PlayerMove : MonoBehaviour
 	private bool _AttractionRequested = false;
 	private bool _RepulsionRequested = false;
 	private bool _IsOnGround = false;
+	private float _SuckedRotation;
 
 	[Header("Ground Movement")]
 	public float _MovementForce;
 
 	[Header("Master Magnet")]
+	public AnimationCurve _MasterAttractionCurve;
 	public float _MasterAttractionMinForce;
 	public float _MasterAttractionForce;
 
@@ -39,6 +41,7 @@ public class PlayerMove : MonoBehaviour
 	[Header("Animation")]
 	public float _ToupieAnimationThreshold;
 	public float _ToupieAnimationMaxSpeed;
+	public float _SuckedSpeed;
 
 	private IEnumerator FreezeFrame(float time)
 	{
@@ -105,11 +108,14 @@ public class PlayerMove : MonoBehaviour
 
 		//Animation state
 		_Animator.speed = 1.0f;
+		transform.GetChild(0).localPosition = new Vector3(0.0f, -0.5f, 0.0f);
 		if(_MasterMagnet != null)
 		{
-			_Animator.SetBool("Sucked", true);
+			transform.GetChild(0).localPosition = Vector3.zero;
+			transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(_SuckedRotation, 90.0f, 0.0f));
+			_SuckedRotation += _SuckedSpeed;
 		}
-		if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f || !_IsOnGround)
+		else if(Mathf.Abs(_Rigidbody.velocity.y) > 0.5f || !_IsOnGround)
 		{
 			_Animator.SetBool("toupie", true);
 			transform.GetChild(0).rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
@@ -146,6 +152,11 @@ public class PlayerMove : MonoBehaviour
 		distance.Normalize();
 
 		float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MasterMagnet.GetComponent<CircleCollider2D>().radius));
+		if(_WithCurve)
+		{
+			forceRatio = _MasterAttractionCurve.Evaluate(forceRatio);
+		}
+
 		float forceMode = _MasterAttractionForce;
 		forceMode = _MasterAttractionMinForce + (forceMode - _MasterAttractionMinForce) * forceRatio;
 		attractForce += distance * forceMode;
@@ -211,6 +222,7 @@ public class PlayerMove : MonoBehaviour
 			_MagnetList.Clear();
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
+			_Animator.SetBool("Sucked", true);
 		}
 	}
 
@@ -224,6 +236,8 @@ public class PlayerMove : MonoBehaviour
 		{
 			_MasterMagnet = null;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.0f;
+			_Animator.SetBool("Sucked", false);
+			_SuckedRotation = 0.0f;
 		}
 	}
 

@@ -904,8 +904,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MovementForce: 10
-  _MasterAttractionMinForce: 2
-  _MasterAttractionForce: 3
+  _MasterAttractionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 16.413044
+      outSlope: 16.413044
+      tangentMode: 10
+    - time: 0.060927153
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -1.0648801
+      outSlope: -1.0648801
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _MasterAttractionMinForce: 0
+  _MasterAttractionForce: 1
   _WithCurve: 1
   _AttractionCurve:
     serializedVersion: 2
@@ -940,6 +961,7 @@ MonoBehaviour:
   _RepulsionImpulse: 1
   _ToupieAnimationThreshold: 4
   _ToupieAnimationMaxSpeed: 3
+  _SuckedSpeed: 15
 --- !u!137 &13712824
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
