@@ -17,6 +17,9 @@ public class PlayerMove : MonoBehaviour
 	private float _DeathAnimationElapsed = 0.0f;
 	private Vector3 _MeshOffset;
 	private Vector3 _StartPosition;
+	public float _LevelStartTime {get; set;}
+	public float _LevelEndTime {get; set;}
+	private bool _LevelEnded {get; set;}
 
 	[Header("Ground Movement")]
 	public float _MovementForce;
@@ -63,17 +66,18 @@ public class PlayerMove : MonoBehaviour
 		_Animator = transform.GetChild(0).GetComponent<Animator>();
 		_MeshOffset = transform.GetChild(0).localPosition;
 		_StartPosition = transform.position;
+		_LevelEnded = false;
 	}
 
 	private void Start()
 	{
+		_LevelStartTime = Time.time;
 		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
 	}
 
 	private void Update()
 	{
 		_Input = Input.GetAxis("Horizontal");
-
 		if(!Input.GetButton("Fire1"))
 		{
 			for(int i=0; i < _MagnetList.Count; ++i)
@@ -110,6 +114,11 @@ public class PlayerMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if(!_LevelEnded)
+		{
+			_LevelEndTime = Time.time;
+		}
+
 		if(_IsDead)
 		{
 			_DeathAnimationElapsed += Time.fixedDeltaTime;
@@ -268,6 +277,8 @@ public class PlayerMove : MonoBehaviour
 		ClearMagnets();
 		_MasterMagnet = null;
 		_IsDead = false;
+		_LevelStartTime = Time.time;
+		_LevelEnded = false;
 		MovableMagnet.RespawnAllInstances();
 		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
 	}
@@ -284,6 +295,13 @@ public class PlayerMove : MonoBehaviour
 			_MasterMagnet = collider.gameObject;
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.1f;
 			_Animator.SetBool("Sucked", true);
+			_LevelEnded = true;
+			_LevelEndTime = Time.time;
+			float elapsed = _LevelEndTime - _LevelStartTime;
+			if(LevelsManager.instance != null)
+			{
+				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel);
+			}
 		}
 		else if(collider.tag == "Hazard" && !_IsDead)
 		{
