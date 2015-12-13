@@ -8,6 +8,7 @@ TagManager:
   - MasterMagnet
   - Hazard
   - FadeScreen
+  - LevelIcon
   layers:
   - Default
   - TransparentFX

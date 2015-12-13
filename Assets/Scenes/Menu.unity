@@ -173,9 +173,10 @@ GameObject:
   - 114: {fileID: 44718165}
   - 114: {fileID: 44718168}
   - 95: {fileID: 44718169}
+  - 114: {fileID: 44718170}
   m_Layer: 5
   m_Name: Level 4
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,6 +313,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &44718170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 44718163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 6
 --- !u!1001 &49438417
 Prefab:
   m_ObjectHideFlags: 0
@@ -542,6 +555,98 @@ CanvasRenderer:
 Transform:
   m_PrefabParentObject: {fileID: 460258, guid: d172913036cd82842a9ced27898e0ada, type: 2}
   m_PrefabInternal: {fileID: 1538659132}
+--- !u!1 &129067769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 129067770}
+  - 222: {fileID: 129067772}
+  - 114: {fileID: 129067771}
+  - 114: {fileID: 129067773}
+  m_Layer: 5
+  m_Name: Summary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &129067770
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129067769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 545394470}
+  m_RootOrder: 9
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 293.8, y: 134.7}
+  m_SizeDelta: {x: 194.16, y: 88.7}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &129067771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129067769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a7feeeda23780eb4f8466e8f832cf91c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Total time: ??
+
+
+    LEVEL 1
+
+    level TIME : ??
+
+'
+--- !u!222 &129067772
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129067769}
+--- !u!114 &129067773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129067769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722ea0cb0036df47946aa2b212b02a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &142252557
 Prefab:
   m_ObjectHideFlags: 0
@@ -625,9 +730,10 @@ GameObject:
   - 114: {fileID: 148165743}
   - 114: {fileID: 148165746}
   - 95: {fileID: 148165747}
+  - 114: {fileID: 148165748}
   m_Layer: 5
   m_Name: 'Level 5 '
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,6 +870,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &148165748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 148165741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 7
 --- !u!1001 &222872280
 Prefab:
   m_ObjectHideFlags: 0
@@ -863,9 +981,10 @@ GameObject:
   - 114: {fileID: 310763695}
   - 114: {fileID: 310763698}
   - 95: {fileID: 310763699}
+  - 114: {fileID: 310763700}
   m_Layer: 5
   m_Name: Level 9
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1002,6 +1121,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &310763700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310763693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 11
 --- !u!4 &348267943 stripped
 Transform:
   m_PrefabParentObject: {fileID: 460258, guid: d172913036cd82842a9ced27898e0ada, type: 2}
@@ -1327,9 +1458,10 @@ GameObject:
   - 114: {fileID: 449066262}
   - 114: {fileID: 449066266}
   - 95: {fileID: 449066267}
+  - 114: {fileID: 449066268}
   m_Layer: 5
   m_Name: Level 10
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1466,6 +1598,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &449066268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449066261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 12
 --- !u!1 &452136285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,6 +1839,7 @@ RectTransform:
   - {fileID: 76622054}
   - {fileID: 1060585496}
   - {fileID: 702392943}
+  - {fileID: 129067770}
   - {fileID: 2052559441}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1744,7 +1889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439068, guid: 6694153d4e623b2458bd1a51fe4ff61b, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 153490, guid: 6694153d4e623b2458bd1a51fe4ff61b, type: 2}
       propertyPath: m_Name
@@ -1912,9 +2057,10 @@ GameObject:
   - 114: {fileID: 745768462}
   - 114: {fileID: 745768465}
   - 95: {fileID: 745768466}
+  - 114: {fileID: 745768467}
   m_Layer: 5
   m_Name: Level 8
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2051,6 +2197,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &745768467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745768460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 10
 --- !u!1 &776634819
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,9 +2222,10 @@ GameObject:
   - 114: {fileID: 776634820}
   - 114: {fileID: 776634824}
   - 95: {fileID: 776634825}
+  - 114: {fileID: 776634826}
   m_Layer: 5
   m_Name: Level 11
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2203,6 +2362,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &776634826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 776634819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 13
 --- !u!4 &819057245 stripped
 Transform:
   m_PrefabParentObject: {fileID: 460258, guid: d172913036cd82842a9ced27898e0ada, type: 2}
@@ -2426,9 +2597,10 @@ GameObject:
   - 114: {fileID: 888804138}
   - 114: {fileID: 888804141}
   - 95: {fileID: 888804142}
+  - 114: {fileID: 888804143}
   m_Layer: 5
   m_Name: Level 3
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2565,6 +2737,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &888804143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888804136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 5
 --- !u!1 &896169992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,9 +3127,10 @@ GameObject:
   - 114: {fileID: 939042466}
   - 114: {fileID: 939042469}
   - 95: {fileID: 939042470}
+  - 114: {fileID: 939042471}
   m_Layer: 5
   m_Name: Level 7
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3082,6 +3267,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &939042471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939042464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 9
 --- !u!1 &985226550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,9 +3810,10 @@ GameObject:
   - 114: {fileID: 1182418798}
   - 114: {fileID: 1182418801}
   - 95: {fileID: 1182418802}
+  - 114: {fileID: 1182418803}
   m_Layer: 5
   m_Name: Level 6
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3752,6 +3950,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1182418803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182418796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 8
 --- !u!1 &1194818769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3857,9 +4067,10 @@ GameObject:
   - 114: {fileID: 1208616050}
   - 114: {fileID: 1208616054}
   - 95: {fileID: 1208616055}
+  - 114: {fileID: 1208616056}
   m_Layer: 5
   m_Name: Level Tuto 1
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3996,6 +4207,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1208616056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208616049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 1
 --- !u!4 &1219781712 stripped
 Transform:
   m_PrefabParentObject: {fileID: 460258, guid: d172913036cd82842a9ced27898e0ada, type: 2}
@@ -4547,9 +4770,10 @@ GameObject:
   - 114: {fileID: 1596058076}
   - 114: {fileID: 1596058080}
   - 95: {fileID: 1596058081}
+  - 114: {fileID: 1596058082}
   m_Layer: 5
   m_Name: Level Tuto 2
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4686,6 +4910,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1596058082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596058075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 2
 --- !u!1001 &1632436176
 Prefab:
   m_ObjectHideFlags: 0
@@ -4843,9 +5079,10 @@ GameObject:
   - 114: {fileID: 1748269055}
   - 114: {fileID: 1748269058}
   - 95: {fileID: 1748269059}
+  - 114: {fileID: 1748269060}
   m_Layer: 5
   m_Name: Level 1
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4982,6 +5219,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1748269060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1748269053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 3
 --- !u!1 &1771567418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,9 +5383,10 @@ GameObject:
   - 114: {fileID: 1936533537}
   - 114: {fileID: 1936533541}
   - 95: {fileID: 1936533542}
+  - 114: {fileID: 1936533543}
   m_Layer: 5
   m_Name: Level 2
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5273,6 +5523,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1936533543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936533536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 4
 --- !u!4 &1938920663 stripped
 Transform:
   m_PrefabParentObject: {fileID: 460258, guid: d172913036cd82842a9ced27898e0ada, type: 2}
@@ -5429,9 +5691,10 @@ GameObject:
   - 114: {fileID: 1945569739}
   - 114: {fileID: 1945569742}
   - 95: {fileID: 1945569743}
+  - 114: {fileID: 1945569744}
   m_Layer: 5
   m_Name: Level 12
-  m_TagString: Untagged
+  m_TagString: LevelIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5568,6 +5831,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1945569744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945569737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a6208bfc2ee94baecac7a6cfb44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _LevelIndex: 14
 --- !u!1 &2001247610
 GameObject:
   m_ObjectHideFlags: 0

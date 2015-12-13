@@ -66,4 +66,19 @@ public class LevelsManager : MonoBehaviour
 		}
 		File.WriteAllLines("Polaris.sav", lines);
 	}
+
+	public float GetCumulativeTime()
+	{
+		float cumulative = 0.0f;
+		for(int i=0; i < Application.levelCount - 1; ++i)
+		{
+			if(_Timers[i] < 0.0f)
+			{
+				return -1.0f;
+			}
+			cumulative += _Timers[i];
+		}
+
+		return cumulative;
+	}
 }
