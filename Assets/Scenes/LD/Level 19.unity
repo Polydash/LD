@@ -328,7 +328,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.29
+      value: 6.66
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -352,7 +352,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5834164, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_Radius
@@ -470,7 +470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.01
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -494,7 +494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5834164, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_Radius
@@ -562,7 +562,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.1
+      value: 9.37
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_LocalPosition.z
@@ -586,7 +586,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490810, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5834164, guid: de73771c51e15b748935313e4605ea58, type: 2}
       propertyPath: m_Radius
