@@ -21,6 +21,8 @@ public class PlayerMove : MonoBehaviour
 	public float _MasterAttractionForce;
 
 	[Header("Common Magnet Attraction")]
+	public bool _WithCurve = false;
+	public AnimationCurve _AttractionCurve;
 	public float _AttractionImpulseForce;
 	public float _AttractionMinForce;
 	public float _AttractionForce;
@@ -157,6 +159,11 @@ public class PlayerMove : MonoBehaviour
 			distance.Normalize();
 
 			float forceRatio = Mathf.Max(0.0f, 1.0f - (magnitude / _MagnetList[i].GetComponent<CircleCollider2D>().radius));
+			if(_WithCurve)
+			{
+				forceRatio = _AttractionCurve.Evaluate(forceRatio);
+			}
+			
 			float forceMode = (_AttractionImpulse) ? _AttractionImpulseForce : Mathf.Max(_AttractionForce, _AttractionForceCap);
 			forceMode = _AttractionMinForce + (forceMode - _AttractionMinForce) * forceRatio;
 			attractForce += distance * forceMode;

@@ -906,6 +906,28 @@ MonoBehaviour:
   _MovementForce: 10
   _MasterAttractionMinForce: 2
   _MasterAttractionForce: 3
+  _WithCurve: 1
+  _AttractionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1.99151
+      outSlope: 1.99151
+      tangentMode: 10
+    - time: 0.5034166
+      value: 1.0025592
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 0.997351
+      value: 0.0020877123
+      inSlope: -2.0255148
+      outSlope: -2.0255148
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   _AttractionImpulseForce: 20
   _AttractionMinForce: 0
   _AttractionForce: 2
