@@ -133,8 +133,8 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 0.78676474, g: 0.34812024, b: 0.13884082, a: 1}
-  m_Intensity: 4
-  m_Range: 7
+  m_Intensity: 1
+  m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1787,7 +1787,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Range
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _factor
@@ -1795,7 +1795,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Intensity
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Shadows.m_Type
