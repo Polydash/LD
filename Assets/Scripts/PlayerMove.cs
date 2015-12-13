@@ -237,6 +237,7 @@ public class PlayerMove : MonoBehaviour
 		{
 			Camera.main.transform.position -= repulsionForce * 0.0075f;
 			StartCoroutine(FreezeFrame(0.0005f));
+			transform.GetChild(1).GetComponent<ParticleSystem>().Play();
 		}
 
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
@@ -274,6 +275,7 @@ public class PlayerMove : MonoBehaviour
 			_Rigidbody.isKinematic = true;
 			_IsDead = true;
 			_Animator.SetTrigger("Dead");
+			transform.GetChild(2).GetComponent<ParticleSystem>().Play();
 			StartCoroutine(FreezeFrame(0.005f));
 			Camera.main.GetComponent<LerpCamera>()._ShakeValue = 0.01f;
 		}
