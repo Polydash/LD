@@ -7,6 +7,6 @@ public class RotateAroundVector : MonoBehaviour
 
 	private void Update()
 	{
-		transform.eulerAngles += _SpeedAngles * Time.deltaTime;
+		transform.localEulerAngles += _SpeedAngles * Time.deltaTime;
 	}
 }
