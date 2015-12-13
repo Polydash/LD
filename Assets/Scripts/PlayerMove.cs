@@ -28,6 +28,13 @@ public class PlayerMove : MonoBehaviour
 	public float _ToupieAnimationThreshold;
 	public float _ToupieAnimationMaxSpeed;
 
+	private IEnumerator FreezeFrame(float time)
+	{
+		Time.timeScale = 0.01f;
+		yield return new WaitForSeconds(time);
+		Time.timeScale = 1;
+	}
+
 	private void Awake()
 	{
 		_Rigidbody = GetComponent<Rigidbody2D>();
@@ -141,7 +148,13 @@ public class PlayerMove : MonoBehaviour
 			forceMode = _RepulsionMinForce + (forceMode - _RepulsionMinForce) * forceRatio;
 			repulsionForce -= distance * forceMode;
 		}
-		
+
+		if(_MagnetList.Count > 0)
+		{
+			Camera.main.transform.position -= repulsionForce * 0.0075f;
+			StartCoroutine(FreezeFrame(0.0005f));
+		}
+
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
 	}
 
