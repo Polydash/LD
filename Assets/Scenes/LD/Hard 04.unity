@@ -903,6 +903,10 @@ Prefab:
       propertyPath: _Player
       value: 
       objectReference: {fileID: 1893885871}
+    - target: {fileID: 22463506, guid: 030024b6ab9a99d4da2994ad1a77057c, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 122.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 030024b6ab9a99d4da2994ad1a77057c, type: 2}
   m_IsPrefabParent: 0

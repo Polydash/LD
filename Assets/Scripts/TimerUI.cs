@@ -16,7 +16,7 @@ public class TimerUI : MonoBehaviour
 	private void Update()
 	{
 		float elapsed = _Player._LevelEndTime - _Player._LevelStartTime;
-		string display = "R / Start : Restart level\nTime : " + elapsed.ToString("0.00") + "\n";
+		string display = "Left mouse / Button A : Attract\nRight mouse / Button X : Repulse\nR / Start : Restart level\nTime : " + elapsed.ToString("0.00") + "\n";
 		if(LevelsManager.instance != null)
 		{
 			float bestTime = LevelsManager.instance.GetTimer(Application.loadedLevel - 1);
