@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
 	public float _LevelStartTime {get; set;}
 	public float _LevelEndTime {get; set;}
 	private bool _LevelEnded {get; set;}
+	private FXPlayer _FXPlayer;
 
 	[Header("Ground Movement")]
 	public float _MovementForce;
@@ -103,12 +104,14 @@ public class PlayerMove : MonoBehaviour
 		_MeshOffset = transform.GetChild(0).localPosition;
 		_StartPosition = transform.position;
 		_LevelEnded = false;
+		_FXPlayer = transform.GetComponentInChildren<FXPlayer>();
 	}
 
 	private void Start()
 	{
 		_LevelStartTime = Time.time;
 		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
+		_FXPlayer.Play("Spawn");
 	}
 
 	private void Update()
@@ -120,6 +123,7 @@ public class PlayerMove : MonoBehaviour
 			{
 				_MagnetList[i].GetComponent<Magnet>().desactivate();
 			}
+			_FXPlayer.StopIfPlaying("Attraction");
 		}
 
 		if(Input.GetButtonDown("Submit"))
@@ -275,6 +279,16 @@ public class PlayerMove : MonoBehaviour
 			_MagnetList[i].GetComponent<Magnet>().activate();
 		}
 
+		if(_MagnetList.Count > 0)
+		{
+			if(!_FXPlayer.IsPlaying("Attraction"))
+				_FXPlayer.Play("Attraction");
+		}
+		else
+		{
+			_FXPlayer.StopIfPlaying("Attraction");
+		}
+
 		_Rigidbody.AddForce(attractForce, ForceMode2D.Impulse);
 	}
 
@@ -298,6 +312,7 @@ public class PlayerMove : MonoBehaviour
 			Camera.main.transform.position -= repulsionForce * 0.0075f;
 			StartCoroutine(FreezeFrame(0.0005f));
 			transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+			_FXPlayer.Play("Repulsion");
 		}
 
 		_Rigidbody.AddForce(repulsionForce, ForceMode2D.Impulse);
@@ -317,6 +332,7 @@ public class PlayerMove : MonoBehaviour
 		_LevelEnded = false;
 		MovableMagnet.RespawnAllInstances();
 		transform.GetChild(2).GetComponent<ParticleSystem>().Play();
+		_FXPlayer.Play("Spawn");
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
@@ -335,6 +351,7 @@ public class PlayerMove : MonoBehaviour
 			_LevelEnded = true;
 			_LevelEndTime = Time.time;
 			float elapsed = _LevelEndTime - _LevelStartTime;
+			_FXPlayer.Play("LevelClear");
 			if(LevelsManager.instance != null)
 			{
 				LevelsManager.instance.SubmitTimer(elapsed, Application.loadedLevel - 1);
@@ -343,6 +360,7 @@ public class PlayerMove : MonoBehaviour
 		else if(collider.tag == "Hazard" && !_IsDead)
 		{
 			transform.GetChild(3).GetComponent<ParticleSystem>().Play();
+			_FXPlayer.Play("Death");
 			_DeathAnimationElapsed = 0.0f;
 			_Rigidbody.isKinematic = true;
 			_IsDead = true;
