@@ -893,8 +893,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 556154854}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 33, y: 9, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalPosition: {x: 33, y: 9.5, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1527302662}
   m_RootOrder: 6
@@ -1012,7 +1012,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 575948955}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 24, y: 5, z: 0}
+  m_LocalPosition: {x: 24, y: 4, z: 0}
   m_LocalScale: {x: 4, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1527302662}
@@ -2603,11 +2603,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 32.94
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.68
+      value: 7.74
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2631,7 +2631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_RootOrder
-      value: 39
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 119486, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_Name
@@ -2883,7 +2883,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.7825427
+      value: 6.78
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2907,7 +2907,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440660, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 119486, guid: a7acc12f3c1905c41a6b7be7dcd795f3, type: 2}
       propertyPath: m_Name
